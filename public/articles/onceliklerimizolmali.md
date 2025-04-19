@@ -1,0 +1,3 @@
+Önceliklerimiz olmalı, her zaman ayrıcalıklı biri olur. Ya da bir şeyler de önceliğimiz olur. Yani insan bir şeyleri ister ve alır ve yok olur ve ve ve... İnsanının istekleri genel olarak ya da çoğunlukla bitmez ve bu isteklerde, isteklere ulaşabilmesi için sonuca ya da isteğe odaklanması şarttır. Bir şeyi istenebilir ya da bir çok şey ancak dikkat edilmesi gereken, aynı anda iki iş bir arada olmaz yani öncelik biri olmalı sonra diğeri.
+
+Fakat bazen ikisinden birini seçmek zorunda kalırız. Çünkü birini seçmemiz diğerine engel teşkil eder, seçimlerimizde her zaman buna dikkat etmemiz gerek. Çünkü “Her seçim bir kayıptır aynı zamanda.”

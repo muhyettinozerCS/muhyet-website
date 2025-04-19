@@ -1,0 +1,1 @@
+Bazı şeylerin şifası zıtlıkta bulunur. Mesela gözlerin şifası veya iyi görebilmesi için karanlık şarttır. Fakat kimisi yıllar boyunca karanlıkta kalsa dahi bir ışık belirtisi bile algılayamaz.

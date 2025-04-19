@@ -1,0 +1,1 @@
+Sınav basitti aslında: gemiye binenin yeni bir şansı olacaktı binmeyenin ise kudretli ya da güçlü olmasının bir önemi olmayacaktı, boğulup gidecekti.

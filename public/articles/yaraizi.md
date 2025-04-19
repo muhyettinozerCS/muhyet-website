@@ -1,0 +1,1 @@
+Herkesin bir yarası vardır ve kimse göstermek istemez bu yarayı, bir o kadar da yaralarına merhem arar ve herkesten deva umar. İnsan farklı bir varlık. Zıtlıkları bir arada ister bu konuda hiç büyüme göstermeden hep çocuk kalır.

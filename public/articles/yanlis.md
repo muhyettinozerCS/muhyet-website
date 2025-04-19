@@ -1,0 +1,1 @@
+Yanlışlarımız neden tüm doğrularımızı silebilsin ki?

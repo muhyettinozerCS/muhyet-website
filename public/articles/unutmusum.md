@@ -1,0 +1,1 @@
+Güzel bir söz duydum, durdum düşündüm. Sonra bunu paylaşayım dedim, unutmuştum.

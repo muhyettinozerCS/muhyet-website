@@ -1,0 +1,4 @@
+Sahip olmak için  tek gözünü, yok etmek için iki gözünü kapat.
+
+Bunların hepsi aslında bir yansımadır yani sadece bizim görüntüye verdiğimiz değerdir. Oysa her şeyin bir anlamı olmak zorunda değil. Her şeye sahip olmak ya da her şeyi yok etmek zorunda değiliz. Varlık denilen olgu bu kadar basit olmamalı, bizim elimizde olmamalı. Her an bir şey götürüyorken, her şeyin iki elimizde olduğunu düşünmek ne kadar pervasız ve ahmakça. Evet size söylüyorum kulak verin bu dediklerime. Dünya bizim, senin veya onun etrafında  dönmüyor. Sadece muhteşem yapının birer parçasıyız. Bazen çok mahiyete sahip bir  parçası, bazense mahiyeti yıllar sonra anlaşılacak bir fazlalık gibi görünen bir parça. Unutma vazgeçilmezsin. Ama diğer parçalar olmadan sen bir hiçsin sen olmadan da diğer parçalar. Ya bu yapının düzen içinde ki önemli bir  parçası olacaksın ya da harabenin içinde moloz  yığınındaki bir demir veya bir tuğla parçası.
+

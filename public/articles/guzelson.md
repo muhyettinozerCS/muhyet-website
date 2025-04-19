@@ -1,0 +1,1 @@
+Güzel bir son, en iyi başlangıçlar kadar etkilidir.
