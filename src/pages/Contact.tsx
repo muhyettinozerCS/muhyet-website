@@ -26,7 +26,7 @@ const Contact = () => {
         <h2 className="text-4xl font-extrabold text-center mb-10 text-blue-700">📬 İletişim</h2>
         {state.succeeded ? (
           <div className="max-w-xl mx-auto bg-white/90 backdrop-blur-md p-8 rounded-2xl shadow-xl text-center">
-            <p className="text-2xl font-semibold text-green-600">Mesajınız iletildi! En kısa sürede sizler dönüş sağlanacaktır. Teşekkürler 🙏</p>
+            <p className="text-2xl font-semibold text-green-600">Mesajınız iletildi! En kısa sürede sizler dönüş sağlanacaktır. Grazie 🙏</p>
           </div>
         ) : (
           <form
