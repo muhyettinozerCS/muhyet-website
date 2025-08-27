@@ -3,7 +3,7 @@ import React from "react";
 export default function PrivacyPolicy() {
     return (
         <div style={{ padding: "2rem" }}>
-            <h1>HammurBeyDenetim Uygulaması - Gizlilik Politikası</h1>
+            <h1>Privacy Policy</h1>
             <p><strong>Son güncelleme tarihi:</strong> 27 Ağustos 2025</p>
             <p><strong>Web sitesi:</strong> <a href="https://www.muhyettinozer.com/privacy-policy-hamurbeydenetim" target="_blank" rel="noopener noreferrer">https://www.muhyettinozer.com/privacy-policy-hamurbeydenetim</a></p>
             <p><strong>İletişim e-posta adresi:</strong> muhyettinozer@gmail.com</p>
