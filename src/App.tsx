@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
-import EssayDetail from "./components/EssayDetail"; // ✅ en üste alındı
+import EssayDetail from "./components/EssayDetail"; 
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import Essays from "./pages/Essays";
@@ -11,8 +11,9 @@ import Contact from "./pages/Contact";
 import About from "./pages/About";
 import Navbar from "./components/Navbar";
 import AutoScrollToTop from "./components/AutoScrollToTop";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfUse from "./pages/TermsOfUse";
 
-// 👇 Ana içerik için ayrı bir bileşen oluşturuyoruz
 const AnimatedRoutes = () => {
     const location = useLocation();
 
@@ -26,6 +27,8 @@ const AnimatedRoutes = () => {
                 <Route path="/articles" element={<Articles />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/about" element={<About />} />
+                <Route path="/privacy-policy-hamurbeydenetim" element={<PrivacyPolicy />} />
+                <Route path="/terms-of-use-hamurbeydenetim" element={<TermsOfUse />} />
             </Routes>
         </AnimatePresence>
     );
