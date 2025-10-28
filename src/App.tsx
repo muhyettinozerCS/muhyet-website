@@ -13,8 +13,8 @@ import Navbar from "./components/Navbar";
 import AutoScrollToTop from "./components/AutoScrollToTop";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfUse from "./pages/TermsOfUse";
-import PrivacyPolicy from "./pages/PrivacyPolicyMSuperAudit";
-import TermsOfUse from "./pages/TermsOfUseMSuperAudit";
+import PrivacyPolicyMSuperAudit from "./pages/PrivacyPolicyMSuperAudit";
+import TermsOfUseMSuperAudit from "./pages/TermsOfUseMSuperAudit";
 
 const AnimatedRoutes = () => {
     const location = useLocation();
