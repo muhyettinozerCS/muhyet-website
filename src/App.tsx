@@ -13,6 +13,8 @@ import Navbar from "./components/Navbar";
 import AutoScrollToTop from "./components/AutoScrollToTop";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfUse from "./pages/TermsOfUse";
+import PrivacyPolicy from "./pages/PrivacyPolicyMSuperAudit";
+import TermsOfUse from "./pages/TermsOfUseMSuperAudit";
 
 const AnimatedRoutes = () => {
     const location = useLocation();
@@ -29,6 +31,8 @@ const AnimatedRoutes = () => {
                 <Route path="/about" element={<About />} />
                 <Route path="/privacy-policy-hamurbeydenetim" element={<PrivacyPolicy />} />
                 <Route path="/terms-of-use-hamurbeydenetim" element={<TermsOfUse />} />
+                <Route path="/privacy-policy-msuperaudit" element={<PrivacyPolicyMSuperAudit />} />
+                <Route path="/terms-of-use-msuperaudit" element={<TermsOfUseMSuperAudit />} />
             </Routes>
         </AnimatePresence>
     );
