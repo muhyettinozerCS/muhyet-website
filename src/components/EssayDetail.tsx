@@ -2,19 +2,23 @@ import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import matter from "gray-matter";
 import ReactMarkdown from "react-markdown";
-import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
+import Seo from "./Seo";
 
 const EssayDetail = () => {
     const { slug } = useParams();
     const [content, setContent] = useState<string>("");
-    const [meta, setMeta] = useState<{ title: string; date: string } | null>(null);
+    const [meta, setMeta] = useState<{ title: string; date: string; summary: string } | null>(null);
     const [error, setError] = useState<boolean>(false);
 
     useEffect(() => {
         const loadEssay = async () => {
             try {
-                const res = await fetch(`/essays/${slug}.md`);
+                if (!slug || !/^[a-z0-9-]+$/.test(slug)) {
+                    throw new Error("Dosya bulunamadı");
+                }
+
+                const res = await fetch(`/content/essays/${slug}.md`);
 
                 if (!res.ok) {
                     throw new Error("Dosya bulunamadı");
@@ -24,7 +28,11 @@ const EssayDetail = () => {
                 const { content, data } = matter(text);
 
                 setContent(content);
-                setMeta({ title: data.title, date: data.date });
+                setMeta({
+                    title: data.title,
+                    date: data.date,
+                    summary: data.summary || "",
+                });
                 setError(false);
             } catch (error) {
                 console.error("Makale yüklenemedi:", error);
@@ -36,6 +44,12 @@ const EssayDetail = () => {
     }, [slug]);
 
     return (
+        <>
+        <Seo
+            title={meta?.title ? `${meta.title} | Muhyettin Özer` : "Yazı | Muhyettin Özer"}
+            description={meta?.summary || "Muhyettin Özer'in teknik yazısı."}
+            path={slug && /^[a-z0-9-]+$/.test(slug) ? `/essay/${slug}` : undefined}
+        />
         <div className="min-h-screen bg-gray-50 text-gray-900 py-12 px-6">
             <div className="max-w-3xl mx-auto">
                 {error ? (
@@ -53,7 +67,7 @@ const EssayDetail = () => {
 
                 {content && (
                     <article className="prose prose-lg max-w-none">
-                        <ReactMarkdown rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkGfm]}>
+                        <ReactMarkdown remarkPlugins={[remarkGfm]}>
                             {content}
                         </ReactMarkdown>
                     </article>
@@ -69,6 +83,7 @@ const EssayDetail = () => {
                 </div>
             </div>
         </div>
+        </>
     );
 };
 

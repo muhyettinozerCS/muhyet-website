@@ -1,8 +1,14 @@
 import React from "react";
+import Seo from "../components/Seo";
 
 export default function TermsOfUse() {
     return (
         <div style={{ padding: "2rem" }}>
+            <Seo
+                title="Terms of Use | HammurBey Denetim"
+                description="Terms of use for the HammurBey Denetim application."
+                path="/terms-of-use-hamurbeydenetim"
+            />
             <h1>Terms of Use</h1>
             <p>
                 By using the HammurBeyDenetim application, you agree to use it solely for

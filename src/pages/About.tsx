@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Seo from "../components/Seo";
 
 const About = () => {
   return (
@@ -9,6 +10,11 @@ const About = () => {
           exit={{opacity: 0}}
           transition={{duration: 0.4}}
       >
+        <Seo
+            title="Hakkımda | Muhyettin Özer"
+            description="Yazılım test ve kalite süreçleri, eğitim geçmişi ve ilgi alanları."
+            path="/about"
+        />
 
         {/* 🔮 Arka plan animasyonları */}
         <div className="absolute inset-0 -z-10 overflow-hidden">

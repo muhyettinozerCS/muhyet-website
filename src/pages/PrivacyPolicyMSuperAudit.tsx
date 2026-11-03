@@ -1,4 +1,5 @@
 import React from "react";
+import Seo from "../components/Seo";
 
 const PrivacyPolicy: React.FC = () => {
   return (
@@ -12,6 +13,11 @@ const PrivacyPolicy: React.FC = () => {
         margin: "0 auto",
       }}
     >
+      <Seo
+        title="Privacy Policy | MSuperAudit"
+        description="Privacy policy for the MSuperAudit application."
+        path="/privacy-policy-msuperaudit"
+      />
       <h1 style={{ fontSize: "2rem", marginBottom: "1rem" }}>Privacy Policy</h1>
 
       <p>

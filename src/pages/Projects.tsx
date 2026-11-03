@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Seo from "../components/Seo";
 
 const projects = [
 
@@ -61,6 +62,11 @@ const Projects = () => {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.4 }}
       >
+        <Seo
+            title="Projelerim | Muhyettin Özer"
+            description="Test otomasyonu projeleri ve üzerinde çalışılan uygulamalar."
+            path="/projects"
+        />
         {/* 🔮 Glow arka plan efektleri */}
         <div className="absolute inset-0 -z-10 overflow-hidden">
           <div className="absolute w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-30 top-20 left-20 animate-pulse" />
@@ -99,7 +105,7 @@ const Projects = () => {
                         key={index}
                         className="relative block p-6 bg-gradient-to-tr from-blue-50 via-cyan-50 to-indigo-50 border border-blue-100 rounded-xl shadow-lg hover:shadow-xl transition hover:border-cyan-200"
                     >
-                      <div className="absolute top-2 right-2 bg-blue-400 text-white text-xs font-semibold px-2 py-1 rounded-full shadow">
+                      <div className="absolute top-2 right-2 bg-blue-600 text-white text-xs font-semibold px-2 py-1 rounded-full shadow">
                         Yakında
                       </div>
                       <h3 className="text-xl font-semibold mb-2 text-blue-800">{project.title}</h3>

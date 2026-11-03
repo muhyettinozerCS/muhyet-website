@@ -7,11 +7,13 @@ import { slugify } from "../utils/slugify";
 type ArticleCardProps = {
     title: string;
     image: string;
+    width: number;
+    height: number;
     content: string;
     color?: string;
 };
 
-const ArticleCard: React.FC<ArticleCardProps> = ({ title, image, content, color = "bg-white" }) => {
+const ArticleCard: React.FC<ArticleCardProps> = ({ title, image, width, height, content, color = "bg-white" }) => {
     return (
         <motion.section
 
@@ -29,6 +31,10 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ title, image, content, color 
                         <img
                             src={image}
                             alt={title}
+                            width={width}
+                            height={height}
+                            loading="lazy"
+                            decoding="async"
                             className="w-full max-h-[450px] object-cover transition-transform duration-500 ease-in-out group-hover:scale-105 group-hover:brightness-90"
                         />
                     </div>

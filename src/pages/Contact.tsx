@@ -2,6 +2,7 @@ import React from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import { motion } from "framer-motion";
 import { Instagram, Twitter, Mail } from "lucide-react";
+import Seo from "../components/Seo";
 
 const Contact = () => {
   const [state, handleSubmit] = useForm("mgvargoj"); // Your Formspree form ID
@@ -14,6 +15,11 @@ const Contact = () => {
       transition={{ duration: 0.4 }}
       className="relative overflow-hidden"
     >
+      <Seo
+        title="İletişim | Muhyettin Özer"
+        description="İletişim formu."
+        path="/contact"
+      />
       {/* Parallax Glow Effects */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute w-[500px] h-[500px] bg-sky-100 rounded-full blur-3xl opacity-40 top-10 left-10 animate-pulse" />
@@ -35,8 +41,17 @@ const Contact = () => {
           >
             <input
               type="text"
+              name="_gotcha"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              style={{ display: "none" }}
+            />
+            <input
+              type="text"
               name="name"
               placeholder="👤 Adınız"
+              maxLength={100}
               className="w-full border p-3 rounded focus:outline-none focus:ring focus:ring-blue-200"
               required
             />
@@ -45,6 +60,7 @@ const Contact = () => {
               type="email"
               name="email"
               placeholder="📧 E-posta"
+              maxLength={254}
               className="w-full border p-3 rounded focus:outline-none focus:ring focus:ring-blue-200"
               required
             />
@@ -54,6 +70,7 @@ const Contact = () => {
               name="message"
               placeholder="💬 Mesajınız"
               rows={5}
+              maxLength={5000}
               className="w-full border p-3 rounded focus:outline-none focus:ring focus:ring-blue-200"
               required
             />
