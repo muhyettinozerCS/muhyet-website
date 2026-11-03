@@ -3,30 +3,58 @@ import ScrollToTop from "../components/ScrollToTop";
 import ArticleCard from "../components/ArticleCard";
 import { loadArticle } from "../lib/loadMarkdown";
 import { slugify } from "../utils/slugify";
+import Seo from "./Seo";
 
-const articles = [
-  { title: "Anlamak", image: "/images/articles/anlamak.png", color: "bg-yellow-50", category: "Kişisel Gelişim" },
-  { title: "Bataklık", image: "/images/articles/bataklik.png", color: "bg-green-50", category: "Kişisel Gelişim" },
-  { title: "Budak", image: "/images/articles/budak.png", color: "bg-blue-50", category: "Estetik" },
-  { title: "Duygu Karmaşası", image: "/images/articles/duygukar.png", color: "bg-red-50", category: "Duygular" },
-  { title: "Eşsiz Ahenk", image: "/images/articles/essizahenk.png", color: "bg-purple-50", category: "Estetik" },
-  { title: "İki Düşünce", image: "/images/articles/ikidusunce.png", color: "bg-pink-50", category: "Varoluş" },
-  { title: "Gidenin de Kalanın da Gönlü Hoş", image: "/images/articles/gidenkalangonul.png", color: "bg-orange-50", category: "İlişkiler" },
-  { title: "Güzel Son", image: "/images/articles/guzelson.png", color: "bg-teal-50", category: "Hayat" },
-  { title: "Hayattaki Küçük Adımlar", image: "/images/articles/kucukadimlar.png", color: "bg-indigo-50", category: "Hayat" },
-  { title: "Küçük Etki", image: "/images/articles/kucuketki.png", color: "bg-amber-50", category: "Kişisel Gelişim" },
-  { title: "Nuh'un Gemisi", image: "/images/articles/nuhungemisi.png", color: "bg-lime-50", category: "Hayat" },
-  { title: "Önceliklerimiz Olmalı", image: "/images/articles/oncelik.png", color: "bg-rose-50", category: "Kişisel Gelişim" },
-  { title: "Sıkılmaktan Kurtul", image: "/images/articles/sikilmak.png", color: "bg-cyan-50", category: "Kişisel Gelişim" },
-  { title: "Son Dönemeç", image: "/images/articles/sondonemec.png", color: "bg-fuchsia-50", category: "Hayat" },
-  { title: "Süt Tadında", image: "/images/articles/suttadinda.png", color: "bg-stone-50", category: "Varoluş" },
-  { title: "Şifa Zıtlıktadır", image: "/images/articles/sifa.png", color: "bg-emerald-50", category: "Varoluş" },
-  { title: "Unutmuşum", image: "/images/articles/unutmusum.png", color: "bg-slate-50", category: "Duygular" },
-  { title: "Ün", image: "/images/articles/un.png", color: "bg-neutral-50", category: "İlişkiler" },
-  { title: "Yanlış", image: "/images/articles/yanlis.png", color: "bg-violet-50", category: "Duygular" },
-  { title: "Yara İzi", image: "/images/articles/yaraizi.png", color: "bg-gray-70", category: "Duygular" },
-  { title: "Yargılamak", image: "/images/articles/yargilamak.png", color: "bg-zinc-50", category: "Varoluş" },
-  { title: "Zaman", image: "/images/articles/zaman.png", color: "bg-sky-50", category: "Duygular" }
+type Article = {
+  title: string;
+  image: string;
+  thumb: string;
+  width: number;
+  height: number;
+  thumbWidth: number;
+  thumbHeight: number;
+  color: string;
+  category: string;
+};
+
+const articleImage = (
+  base: string,
+  width: number,
+  height: number,
+  thumbWidth: number,
+  thumbHeight: number
+) => ({
+  image: `/images/articles/${base}.webp`,
+  thumb: `/images/articles/thumbs/${base}.webp`,
+  width,
+  height,
+  thumbWidth,
+  thumbHeight,
+});
+
+const articles: Article[] = [
+  { title: "Anlamak", ...articleImage("anlamak", 1024, 1024, 200, 200), color: "bg-yellow-50", category: "Kişisel Gelişim" },
+  { title: "Bataklık", ...articleImage("bataklik", 800, 1200, 133, 200), color: "bg-green-50", category: "Kişisel Gelişim" },
+  { title: "Budak", ...articleImage("budak", 1024, 1024, 200, 200), color: "bg-blue-50", category: "Estetik" },
+  { title: "Duygu Karmaşası", ...articleImage("duygukar", 1024, 1024, 200, 200), color: "bg-red-50", category: "Duygular" },
+  { title: "Eşsiz Ahenk", ...articleImage("essizahenk", 1200, 800, 200, 133), color: "bg-purple-50", category: "Estetik" },
+  { title: "İki Düşünce", ...articleImage("ikidusunce", 1024, 1024, 200, 200), color: "bg-pink-50", category: "Varoluş" },
+  { title: "Gidenin de Kalanın da Gönlü Hoş", ...articleImage("gidenkalangonul", 1024, 1024, 200, 200), color: "bg-orange-50", category: "İlişkiler" },
+  { title: "Güzel Son", ...articleImage("guzelson", 800, 1200, 133, 200), color: "bg-teal-50", category: "Hayat" },
+  { title: "Hayattaki Küçük Adımlar", ...articleImage("kucukadimlar", 1024, 1024, 200, 200), color: "bg-indigo-50", category: "Hayat" },
+  { title: "Küçük Etki", ...articleImage("kucuketki", 1024, 1024, 200, 200), color: "bg-amber-50", category: "Kişisel Gelişim" },
+  { title: "Nuh'un Gemisi", ...articleImage("nuhungemisi", 1024, 1024, 200, 200), color: "bg-lime-50", category: "Hayat" },
+  { title: "Önceliklerimiz Olmalı", ...articleImage("oncelik", 1024, 1024, 200, 200), color: "bg-rose-50", category: "Kişisel Gelişim" },
+  { title: "Sıkılmaktan Kurtul", ...articleImage("sikilmak", 1200, 800, 200, 133), color: "bg-cyan-50", category: "Kişisel Gelişim" },
+  { title: "Son Dönemeç", ...articleImage("sondonemec", 1024, 1024, 200, 200), color: "bg-fuchsia-50", category: "Hayat" },
+  { title: "Süt Tadında", ...articleImage("suttadinda", 1024, 1024, 200, 200), color: "bg-stone-50", category: "Varoluş" },
+  { title: "Şifa Zıtlıktadır", ...articleImage("sifa", 1024, 1024, 200, 200), color: "bg-emerald-50", category: "Varoluş" },
+  { title: "Unutmuşum", ...articleImage("unutmusum", 1024, 1024, 200, 200), color: "bg-slate-50", category: "Duygular" },
+  { title: "Ün", ...articleImage("un", 1024, 1024, 200, 200), color: "bg-neutral-50", category: "İlişkiler" },
+  { title: "Yanlış", ...articleImage("yanlis", 1024, 1024, 200, 200), color: "bg-violet-50", category: "Duygular" },
+  { title: "Yara İzi", ...articleImage("yaraizi", 1024, 1024, 200, 200), color: "bg-gray-70", category: "Duygular" },
+  { title: "Yargılamak", ...articleImage("yargilamak", 1024, 1024, 200, 200), color: "bg-zinc-50", category: "Varoluş" },
+  { title: "Zaman", ...articleImage("zaman", 1024, 1024, 200, 200), color: "bg-sky-50", category: "Duygular" }
 ];
 
 const Articles = () => {
@@ -86,9 +114,18 @@ const Articles = () => {
 
   return (
       <div className="relative">
+        <Seo
+            title="Denemelerim | Muhyettin Özer"
+            description="Kişisel gelişim, hayat, duygular ve varoluş üzerine denemeler."
+            path="/articles"
+        />
         <img
-            src="/backgrounds/od.jpeg"
+            src="/backgrounds/od.webp"
             alt="background"
+            width={1036}
+            height={1516}
+            decoding="async"
+            fetchPriority="high"
             className="fixed top-0 left-0 w-full h-full object-cover -z-20 opacity-60"
         />
         <div className="fixed top-0 left-0 w-full h-full bg-green-1/2 backdrop-blur-md -z-10" />
@@ -132,8 +169,11 @@ flex flex-col justify-between backdrop-blur-md`}
                   >
                     <div className="flex justify-center items-start h-1/2 pt-4 px-0.5 overflow-hidden">
                       <img
-                          src={article.image}
+                          src={article.thumb}
                           alt={article.title}
+                          width={article.thumbWidth}
+                          height={article.thumbHeight}
+                          decoding="async"
                           className="h-24 w-24 object-contain mx-auto transition-transform duration-300 group-hover:scale-105"
                       />
                     </div>
@@ -154,6 +194,8 @@ flex flex-col justify-between backdrop-blur-md`}
                     key={index}
                     title={article.title}
                     image={article.image}
+                    width={article.width}
+                    height={article.height}
                     color={article.color}
                     content={articleContents[article.title] || "Yükleniyor..."}
                 />

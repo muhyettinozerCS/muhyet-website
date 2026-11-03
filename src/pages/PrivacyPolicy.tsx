@@ -1,8 +1,14 @@
 import React from "react";
+import Seo from "../components/Seo";
 
 export default function PrivacyPolicy() {
     return (
         <div style={{ padding: "2rem", lineHeight: 1.6, maxWidth: 920, margin: "0 auto" }}>
+            <Seo
+                title="HammurBey Denetim Gizlilik Politikası | Muhyettin Özer"
+                description="HammurBey Denetim uygulamasının gizlilik politikası."
+                path="/privacy-policy-hamurbeydenetim"
+            />
             <h1>HammurBey Denetim Gizlilik Politikası</h1>
             <p><strong>Son güncelleme tarihi:</strong> 28 Nisan 2026</p>
 

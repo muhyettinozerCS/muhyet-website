@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
+import Seo from "../components/Seo";
 
 const Home = () => {
   return (
@@ -12,6 +13,11 @@ const Home = () => {
           transition={{ duration: 0.4 }}
           className="relative overflow-hidden"
       >
+        <Seo
+            title="Muhyettin Özer | Yazılım Kalite ve Test Otomasyonu"
+            description="Muhyettin Özer'in yazılım kalite süreçleri, test otomasyonu projeleri, teknik yazıları ve kişisel denemelerini paylaştığı portfolyo sitesi."
+            path="/"
+        />
         {/* Arka Plan */}
         <div className="absolute top-0 left-0 w-full h-full animate-gradient bg-gradient-to-r from-blue-300 via-pink-200 to-purple-300 bg-[length:400%_400%] -z-10" />
 
@@ -42,7 +48,7 @@ const Home = () => {
           <div className="flex flex-wrap gap-4 justify-center mt-6">
             <Link
                 to="/about"
-                className="bg-yellow-600 text-white px-6 py-3 rounded-2xl shadow-md hover:bg-yellow-700 transition"
+                className="bg-yellow-700 text-white px-6 py-3 rounded-2xl shadow-md hover:bg-yellow-800 transition"
             >
               Hakkımda
             </Link>
@@ -54,7 +60,7 @@ const Home = () => {
             </Link>
             <Link
                 to="/essays"
-                className="bg-green-600 text-white px-6 py-3 rounded-2xl shadow-md hover:bg-green-700 transition"
+                className="bg-green-700 text-white px-6 py-3 rounded-2xl shadow-md hover:bg-green-800 transition"
             >
               Yazılarım
             </Link>

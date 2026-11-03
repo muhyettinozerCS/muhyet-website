@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import matter from "gray-matter";
+import Seo from "../components/Seo";
 
 interface EssayMeta {
     slug: string;
@@ -16,13 +17,13 @@ const Essays = () => {
     useEffect(() => {
         const fetchEssays = async () => {
             try {
-                const res = await fetch("/essays/index.json");
+                const res = await fetch("/content/essays/index.json");
                 const files: string[] = await res.json();
 
                 const loadedEssays = await Promise.all(
                     files.map(async (filename) => {
                         const slug = filename.replace(".md", "");
-                        const file = await fetch(`/essays/${filename}`);
+                        const file = await fetch(`/content/essays/${filename}`);
                         const raw = await file.text();
                         const { data } = matter(raw);
 
@@ -51,6 +52,11 @@ const Essays = () => {
             exit={{opacity: 0}}
             transition={{duration: 0.4}}
         >
+            <Seo
+                title="Yazılarım | Muhyettin Özer"
+                description="Teknik yazılar."
+                path="/essays"
+            />
 
             <div className="absolute inset-0 -z-10 overflow-hidden">
                 <div
